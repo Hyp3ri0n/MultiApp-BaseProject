@@ -1,6 +1,6 @@
 /********************************************/
 /*											*/
-/*					Imports					*/
+/*				Variables Imports			*/
 /*											*/
 /********************************************/
 
@@ -19,6 +19,12 @@ html, body, .app-container {
 	margin: 0;
 	padding: 0;
 }
+
+/********************************************/
+/*											*/
+/*					Scroll					*/
+/*											*/
+/********************************************/
 
 ::-webkit-scrollbar {
 	background: transparent;
@@ -97,3 +103,17 @@ html, body, .app-container {
 	display: flex;
 	flex-direction: row;
 }
+
+/********************************************/
+/*											*/
+/*				Variables Imports			*/
+/*											*/
+/********************************************/
+
+/* app */
+@import "components/app";
+@import "components/footer";
+@import "components/header";
+@import "components/sidebar";
+/* home */
+@import "components/home";
