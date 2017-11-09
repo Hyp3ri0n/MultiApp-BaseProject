@@ -78,7 +78,7 @@ gulp.task('scss', function () {
 gulp.task('style', ['scss'], function () {
     return gulp.src('src/assets/styles/**/*.css')
         .pipe(cleanCSS())
-        .pipe(gulp.dest('dist/www'));
+        .pipe(gulp.dest('dist/www/assets/styles'));
 });
 
 /**
@@ -175,7 +175,7 @@ gulp.task('watchers', function () {
     gulp.watch(['src/**/*.html', 'src/**/*.js'], ['resources']).on('change', function (e) {
         console.log('Resource file ' + e.path + ' has been changed. Updating.');
     });
-    gulp.watch(['src/**/*.css', 'src/**/*.scss'], ['style']).on('change', function (e) {
+    gulp.watch(['src/assets/styles/**/*.css', 'src/assets/styles/**/*.scss'], ['style']).on('change', function (e) {
         console.log('Style file ' + e.path + ' has been changed. Updating.');
     });
 });
