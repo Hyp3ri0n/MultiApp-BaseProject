@@ -36,6 +36,9 @@ gulp.task('clean-cordova', function (cb) {
 gulp.task('clean-electron', function (cb) {
     return del(['dist/electron'], cb);
 });
+gulp.task('clean-libs-scss-bootstrap', function (cb) {
+    return del(['src/assets/styles/bootstrap'], cb);
+});
 
 /**
  * Copy all resources for electron/cordova.
@@ -158,11 +161,20 @@ gulp.task("libs_rxjs", function () {
  */
 gulp.task("libs_css", function () {
     return gulp.src([
-        'bootstrap/dist/css/bootstrap.min.css',
         'font-awesome/css/**/*.min.css'
     ], {cwd: "node_modules/**"}) /* Glob required here. */
         .pipe(rename({dirname:''}))
         .pipe(gulp.dest("dist/www/assets/styles/"));
+});
+
+/**
+ * Copy all required libraries into build directory.
+ */
+gulp.task("libs_scss_bootstrap", function () {
+    return gulp.src([
+        '_*.scss'
+    ], {cwd: "node_modules/bootstrap/scss/**"}) /* Glob required here. */
+        .pipe(gulp.dest("src/assets/styles/bootstrap")); /* copy in src to melt it in our own scss file */
 });
 
 /**
@@ -185,10 +197,12 @@ gulp.task('watchers', function () {
  */
 gulp.task('build-web', function (callback) {
     runSequence('clean-web', 
+                'clean-libs-scss-bootstrap',
+                'libs_scss_bootstrap', 
                 'resources', 
                 'style', 
                 'compile', 
-                'libs_js', 
+                'libs_js',
                 'libs_css',
                 callback);
     console.log('Project web built.');
