@@ -117,15 +117,6 @@ gulp.task("libs_js", ["libs_ng", "libs_rxjs"], function () {
         'systemjs/dist/system.src.js',
         'reflect-metadata/Reflect.js',
         'zone.js/dist/zone.min.js',
-        '@angular/common/bundles/common.umd.min.js',
-        '@angular/compiler/bundles/compiler.umd.min.js',
-        '@angular/core/bundles/core.umd.min.js',
-        '@angular/forms/bundles/forms.umd.min.js',
-        '@angular/http/bundles/http.umd.min.js',
-        '@angular/platform-browser/bundles/platform-browser.umd.min.js',
-        '@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.min.js',
-        '@angular/router/bundles/router.umd.min.js',
-        '@angular/upgrade/bundles/upgrade.umd.min.js',
         'hammerjs/hammer.min.js',
         'bootstrap/dist/js/bootstrap.bundle.min.js'
     ], {cwd: "node_modules/**"}) /* Glob required here. */
