@@ -7,7 +7,6 @@ import { AppComponent } from './components/root/app.component';
 import { HeaderComponent } from './components/root/header/header.component';
 import { SidebarComponent } from './components/root/sidebar/sidebar.component';
 import { FooterComponent } from './components/root/footer/footer.component';
-import { SplashScreenComponent } from './components/root/splashScreen/splashScreen.component';
 import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { HomeComponent } from './components/home/home.component';
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
-    SplashScreenComponent,
     HomeComponent
   ],
   bootstrap: [AppComponent]
